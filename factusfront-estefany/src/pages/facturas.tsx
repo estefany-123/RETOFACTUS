@@ -3,6 +3,8 @@ import DefaultLayout from "@/layouts/default";
 import { axiosAPI } from "@/api/axiosAPI";
 import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@heroui/button";
+import { Input } from "@heroui/input";
+import { Search } from "lucide-react";
 
 export default function FacturasPage (){
 
@@ -21,10 +23,17 @@ export default function FacturasPage (){
 
     return(
         <DefaultLayout>
-            {number && JSON.stringify(number)}
             <div className="flex">
                 <h1 className="text-3xl font-bold">Facturas</h1>
                 <Button color="success" variant="bordered" className="ms-6" onPress={() => {window.location.href = "/factura"}}>+ Nueva Factura</Button>
+                <form method="GET" className="ms-auto flex">
+                    <Input
+                        autoComplete="off"
+                        name="number"
+                        placeholder="Buscar factura..."
+                    />
+                    <Button type="submit" color="success" variant="bordered"><Search width={16}/></Button>
+                </form>
             </div>
             {isLoading ?
             <p>Loading...</p>
@@ -49,6 +58,7 @@ export default function FacturasPage (){
                             </Link>
                         </div>
                     ))}
+                    {data.length === 0 && <p>No hay facturas con el número <b>{number}</b></p>}
                 </div>
             </div>
             }
