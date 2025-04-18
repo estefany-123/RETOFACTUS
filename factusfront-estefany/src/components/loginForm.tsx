@@ -51,6 +51,7 @@ export default function LoginForm() {
                 <Input
                     label='Username'
                     type='email'
+                    autoComplete='off'
                     {...register("username", { required: true })}
                 />
                 <p className='text-red-600'>

@@ -103,6 +103,7 @@ export default function NuevaFacturaPage() {
             {...register("reference_code")}
             label="Código de referencia"
             isRequired
+            autoComplete="off"
           />
           <Textarea {...register("observation")} label="Observaciones" />
           <Select
