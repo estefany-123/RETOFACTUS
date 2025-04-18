@@ -15,7 +15,7 @@ datasource db {
 }
 
 model client {
-  identification             Int     @id
+  identification             String  @id
   dv                         Int?
   company                    String?
   trade_name                 String?

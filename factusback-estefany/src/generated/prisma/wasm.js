@@ -155,6 +155,7 @@ exports.Prisma.NullsOrder = {
 };
 
 exports.Prisma.clientOrderByRelevanceFieldEnum = {
+  identification: 'identification',
   company: 'company',
   trade_name: 'trade_name',
   names: 'names',
